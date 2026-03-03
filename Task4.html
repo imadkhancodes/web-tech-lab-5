@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array of Objects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .topper {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Array of Student Objects</h2>
+
+    <div id="studentsList"></div>
+    <div id="average" class="result"></div>
+    <div id="topper" class="result topper"></div>
+</div>
+
+<script>
+    // 1. Create array of 3 student objects
+    let students = [
+        { name: "Ali", marks: 85 },
+        { name: "Sara", marks: 92 },
+        { name: "Ahmed", marks: 78 }
+    ];
+
+    let total = 0;
+    let highest = students[0];
+
+    // Create table
+    let table = "<table><tr><th>Name</th><th>Marks</th></tr>";
+
+    // 2. Display all students using loop
+    for (let i = 0; i < students.length; i++) {
+        table += "<tr><td>" + students[i].name + "</td><td>" + students[i].marks + "</td></tr>";
+        
+        total += students[i].marks;
+
+        if (students[i].marks > highest.marks) {
+            highest = students[i];
+        }
+    }
+
+    table += "</table>";
+    document.getElementById("studentsList").innerHTML = table;
+
+    // 3. Calculate and display average marks
+    let average = total / students.length;
+    document.getElementById("average").innerHTML =
+        "Average Marks: " + average.toFixed(2);
+
+    // 4. Find and display topper student
+    document.getElementById("topper").innerHTML =
+        "Topper: " + highest.name + " (" + highest.marks + " marks)";
+</script>
+
+</body>
+</html>

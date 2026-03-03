@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checker</title>
+    <style>
+        #result {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Number Checker</h2>
+
+<label>Enter a Number:</label>
+<input type="number" id="number"><br><br>
+
+<button onclick="checkNumber()">Check</button>
+
+<h3 id="result"></h3>
+
+<script>
+function checkNumber() {
+    let num = document.getElementById("number").value;
+    let result = document.getElementById("result");
+
+    if (num === "") {
+        alert("Please enter a number.");
+        return;
+    }
+
+    num = Number(num);
+
+    let type = (num % 2 === 0) ? "Even" : "Odd";
+
+    if (num > 0) {
+        result.style.color = "green";
+        result.innerHTML = type + " and Positive";
+    } 
+    else if (num < 0) {
+        result.style.color = "red";
+        result.innerHTML = type + " and Negative";
+    } 
+    else {
+        result.style.color = "black";
+        result.innerHTML = "Zero (Even number)";
+    }
+}
+</script>
+
+</body>
+</html>
+

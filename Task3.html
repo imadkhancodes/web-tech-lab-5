@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Based Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Array Operations</h2>
+    <p id="array"></p>
+    <p id="sum"></p>
+    <p id="largest"></p>
+    <p id="reverse"></p>
+</div>
+
+<script>
+    // 1. Create an array of 6 numbers
+    let numbers = [10, 25, 5, 40, 15, 30];
+
+    // Display original array
+    document.getElementById("array").innerHTML =
+        "Array: " + numbers.join(", ");
+
+    // 2. Calculate sum
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    document.getElementById("sum").innerHTML =
+        "Sum of numbers: " + sum;
+
+    // 3. Find largest number
+    let largest = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > largest) {
+            largest = numbers[i];
+        }
+    }
+    document.getElementById("largest").innerHTML =
+        "Largest number: " + largest;
+
+    // 4. Display array in reverse order
+    let reversed = [...numbers].reverse();
+    document.getElementById("reverse").innerHTML =
+        "Reversed array: " + reversed.join(", ");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>JavaScript Array Activity</h2>
+    <p id="output"></p>
+</div>
+
+<script>
+    // Step 1: Create array
+    let students = ["Ali", "Ahmed", "Sara", "Ayesha", "Usman"];
+
+    // Display original array
+    let outputText = "Original Students: " + students.join(", ") + "<br>";
+
+    // Step 2: Add new student
+    students.push("Hina");
+    outputText += "After Adding Hina: " + students.join(", ") + "<br>";
+
+    // Step 3: Remove last student
+    students.pop();
+    outputText += "After Removing Last Student: " + students.join(", ");
+
+    // Step 4: Display array
+    document.getElementById("output").innerHTML = outputText;
+</script>
+
+</body>
+</html>
